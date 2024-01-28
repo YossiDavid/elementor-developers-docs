@@ -11,7 +11,7 @@ With JS templates we don’t need to retrieve data using a special function, Ele
 
 ```php
 <?php
-class Elementor_Test_Control extends \Elementor\Base_Control {
+class Elementor_Test_Control extends \Elementor\Base_Data_Control {
 
 	public function content_template() {
 		$control_uid = $this->get_control_uid();
