@@ -18,30 +18,21 @@ Applied to the menu anchor widget, sets a custom top distance
 
 #### Example
 
-```js
-jQuery( function( $ ) {
-	// Add space for Elementor Menu Anchor link
-	if ( window.elementorFrontend ) {
-		elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {
-			return scrollTop - 30;
-		} );
-	}
-} );
-
+```php
 add_action( 'wp_footer', function() {
- if ( ! defined( 'ELEMENTOR_VERSION' ) ) {
- return;
- }
+	if ( ! defined( 'ELEMENTOR_VERSION' ) ) {
+		return;
+	}
 	?>
 	<script>
- jQuery( function( $ ) {
- // Add space for Elementor Menu Anchor link
- if ( window.elementorFrontend ) {
- elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {
- return scrollTop - 30;
- } );
- }
- } );
+		jQuery( function( $ ) {
+			// Add space for Elementor Menu Anchor link
+			if ( window.elementorFrontend ) {
+				elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {
+					return scrollTop - 30;
+				} );
+			}
+		} );
 	</script>
 	<?php
 } );
